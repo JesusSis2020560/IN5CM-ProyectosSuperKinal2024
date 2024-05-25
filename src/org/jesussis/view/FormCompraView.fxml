@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane id="AnchorPane" prefHeight="567.0" prefWidth="500.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.jesussis.controller.FormCompraController">
+   <children>
+      <ImageView fitHeight="750.0" fitWidth="500.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../image/Registro%20de%20compras.png" />
+         </image>
+      </ImageView>
+      <TextField fx:id="tfCompraId" editable="false" layoutX="14.0" layoutY="165.0" prefHeight="34.0" prefWidth="183.0" promptText="Compra Id" />
+      <TextField fx:id="tfFecha" layoutX="14.0" layoutY="292.0" prefHeight="34.0" prefWidth="227.0" promptText="Ingrese la fecha (YYYY-MM-DD)" />
+      <TextField fx:id="tfTotal" layoutX="26.0" layoutY="407.0" prefHeight="34.0" prefWidth="183.0" promptText="Ingrese el total (00.00)" />
+      <Button fx:id="btnGuardar" layoutX="34.0" layoutY="503.0" mnemonicParsing="false" onAction="#handleButtonAction" prefHeight="40.0" prefWidth="85.0" text="Guardar" />
+      <Button fx:id="btnCancelar" layoutX="146.0" layoutY="503.0" mnemonicParsing="false" onAction="#handleButtonAction" prefHeight="40.0" prefWidth="85.0" text="Cancelar" />
+   </children>
+</AnchorPane>
