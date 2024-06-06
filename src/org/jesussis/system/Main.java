@@ -24,7 +24,10 @@ import org.jesussis.controller.MenuEmpleadoController;
 import org.jesussis.controller.MenuFacturaController;
 import org.jesussis.controller.MenuPrincipalController;
 import org.jesussis.controller.MenuProductoController;
+import org.jesussis.controller.MenuLoginController;
+    
 import org.jesussis.controller.MenuPromocionController;
+
 import org.jesussis.controller.MenuTicketSoporteController;
 
 public class Main extends Application {
@@ -40,7 +43,7 @@ public class Main extends Application {
     public void start(Stage stage) throws Exception {
         this.stage = stage;
         stage.setTitle("Super Kinal S.A");
-        menuPrincipalView();
+        menuLoginView();
         stage.show();
     }
     
@@ -228,8 +231,21 @@ public class Main extends Application {
         }
     }
     
+        public void menuLoginView(){
+        try{
+            MenuLoginController MenuLoginView = (MenuLoginController)switchScene("MenuLoginView.fxml", 600, 700);
+            MenuLoginView.setStage(this);
+        }catch(Exception e){
+            System.out.println(e.getMessage());
+        }
+    }
+    
     public static void main(String[] args) {
         launch(args);
+    }
+
+    public void formUsuarioView() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
   
 }

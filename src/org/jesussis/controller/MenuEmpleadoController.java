@@ -435,5 +435,9 @@ public class MenuEmpleadoController implements Initializable {
     public void setStage(Main stage) {
         this.stage = stage;
     }
+
+    public void setOp(int op) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
     
 }

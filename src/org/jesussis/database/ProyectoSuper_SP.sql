@@ -1,4 +1,4 @@
-use superDB;
+use superDBJsis;
 
 Delimiter $$
 create procedure sp_agregarCliente(nom varchar(30), ape varchar(30), tel varchar(15), nt varchar(15), dir varchar(200))

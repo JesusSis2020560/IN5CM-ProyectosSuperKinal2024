@@ -1,8 +1,8 @@
-drop database if exists superDB;
+drop database if exists superDBJsis;
 
-create database if not exists superDB;
+create database if not exists superDBJsis;
 
-use superDB;
+use superDBJsis;
 
 set global time_zone = '-6:00';
 
@@ -14,6 +14,25 @@ create table Clientes(
     telefono varchar(15) not null,
     direccion varchar(200) not null,
     primary key PK_clienteId (clienteId)
+);
+
+create table NivelesAcceso(
+	nivelAccesoId int not null auto_increment,
+    nivelAcceso varchar(40) not null,
+    primary key PK_nivelAccesoId (nivelAccesoId)
+);
+
+create table Usuarios(
+	usuarioId int not null auto_increment,
+    usuario varchar(30) not null,
+	contrasenia varchar(100) not null,
+    nivelAccesoId int not null,
+    empleadoId int not null,
+    primary key PK_usuarioId(usuarioId),
+    constraint FK_Usuarios_NivelesAcceso foreign key Usuarios(nivelAccesoId)
+		references NivelesAcceso(nivelAccesoId),
+	constraint FK_Usuarios_Empleados foreign key Usuarios(empleadoId)
+		references Empleados(empleadoId)
 );
 
 create table Cargos(
@@ -147,6 +166,9 @@ insert into Clientes(nombre, apellido, telefono, nit, direccion) values
     ('Alejandro', 'Carrillo', '4234-4234', '36987412-0', 'Ciudad'),
     ('Jesus', 'Sis', '1231-1231', '23548691-0', 'Ciudad');
  
+insert into NivelesAcceso(nivelAcceso) values
+    ('admin'),
+    ('usuario');
 insert into Cargos(nombreCargo, descripcionCargo) values
     ('Gerente de Billar', 'Se encarga de mantener todo en orden.');
     
@@ -179,3 +201,5 @@ insert into DetalleFactura(facturaId, productoId) values
     
 insert into DetalleCompra(cantidadCompra, productoId, compraId) values
 	(15, 1, 1);
+
+select * from Usuarios;

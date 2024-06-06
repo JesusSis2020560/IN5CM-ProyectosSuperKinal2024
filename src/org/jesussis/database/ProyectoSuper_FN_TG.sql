@@ -1,4 +1,4 @@
-use superDB;
+use superDBJsis;
 
 Delimiter $$
 Create function fn_CalcularPromocion(prodId int) returns decimal(10,2) deterministic
